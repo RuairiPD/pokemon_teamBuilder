@@ -4,16 +4,11 @@
              x:Class="pokemon_teamBuilder.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            
-            <Label
-                Text="Pokemon Team Builder"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            
-            
+        <VerticalStackLayout Padding="20">
+            <Entry x:Name="PokemonEntry" Placeholder="Enter Pokémon name or ID"/>
+            <Button x:Name="DownloadBtn" Text="Download Pokémon" Clicked="DownloadBtn_Clicked"/>
+            <Label x:Name="ViewContents" Text="Pokémon info will appear here"/>
+            <Image x:Name="PokemonImage" WidthRequest="200" HeightRequest="200"/>
         </VerticalStackLayout>
     </ScrollView>
 
