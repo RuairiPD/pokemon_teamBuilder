@@ -19,7 +19,18 @@ namespace pokemon_teamBuilder
             DownloadBtn.IsEnabled = false;
             try
             {
-                var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/");
+                string userInput = PokemonEntry.Text?.Trim().ToLower();
+                if (string.IsNullOrEmpty(userInput))
+                {
+                    await DisplayAlert("Error", "Please enter a Pokémon name or ID.", "OK");
+                    DownloadBtn.IsEnabled = true;
+                    return;
+                }
+
+
+
+
+                var response = await httpClient.GetAsync($"https://pokeapi.co/api/v2/pokemon/{userInput}/");
                 if (response != null && response.IsSuccessStatusCode)
                 {
                     string text = await response.Content.ReadAsStringAsync();
@@ -28,11 +39,16 @@ namespace pokemon_teamBuilder
 
                     if (pokemon != null)
                     {
-                        string output = $"Name: {pokemon.Name}\n" +
+                        ViewContents.Text = $"Name: {pokemon.Name}\n" +
                                         $"Height: {pokemon.Height}\n" +
                                         $"Weight: {pokemon.Weight}";
-                        ViewContents.Text = output;
+                        
+                        PokemonImage.Source = pokemon.Sprites.FrontDefault;
                     }
+                }
+                else
+                {
+                    await DisplayAlert("Error", $"Pokémon '{userInput}' not found.", "OK");
                 }
             }
             catch
