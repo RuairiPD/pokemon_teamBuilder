@@ -10,6 +10,7 @@
         <ShellContent Title="Pokédex" ContentTemplate="{DataTemplate local:Pokedex}" />
         <ShellContent Title="Team Builder" ContentTemplate="{DataTemplate local:TeamBuilderPage}" />
         <ShellContent Title="Battle Sim" ContentTemplate="{DataTemplate local:BattleSimPage}" />
+        <ShellContent Title="Type Matchups" ContentTemplate="{DataTemplate local:TypeMatchupPage}" />
     </TabBar>
 
 </Shell>
