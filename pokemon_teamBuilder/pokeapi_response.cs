@@ -2,7 +2,7 @@
 {
     public class pokeapi_response
     {
-        public int response_code { get; set; }
+        public int Response_code { get; set; }
 
     }
 }

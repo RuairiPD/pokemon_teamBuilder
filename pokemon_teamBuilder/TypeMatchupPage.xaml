@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pokemon_teamBuilder.TypeMatchupPage"
+             Title="NewPage1">
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="Type Effectiveness Calculator" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold"/>
+        <!-- Attacking Type -->
+        <Picker Title="Attacking Type" ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedAttackType}" />
+        <!-- Defensive Type 1 -->
+        <Picker Title="Defending Type 1" ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedDefenseType1}" />
+        <!-- Defensive Type 2 -->
+        <Picker Title="Defending Type 2 (optional)" ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedDefenseType2}" />
+        <!-- Result -->
+        <Label Text="{Binding Result}" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,20,0,0"/>
+    
+    </VerticalStackLayout>
+</ContentPage>
